@@ -1,0 +1,5 @@
+1. Office supplies up to PHP 5,000 per invoice are pre-approved.
+2. Consulting or professional services require a signed contract reference on the invoice.
+3. Alcohol, gifts, and personal items are not reimbursable.
+4. Vendors must show a valid TIN on every invoice.
+5. Invoices older than 90 days require finance manager approval.
