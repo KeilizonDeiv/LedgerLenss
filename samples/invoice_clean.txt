@@ -1,0 +1,14 @@
+ACME OFFICE SUPPLIES INC.
+TIN: 123-456-789-000
+Dagupan City, Pangasinan
+
+SALES INVOICE No. INV-2026-0042
+Date: 2026-10-01        Due: 2026-10-31
+
+Qty  Description            Unit Price    Amount
+10   A4 Bond Paper (ream)       250.00   2,500.00
+ 5   Ballpen box                120.00     600.00
+
+                         Subtotal:    3,100.00
+                         VAT 12%:       372.00
+                         TOTAL (PHP):  3,472.00
