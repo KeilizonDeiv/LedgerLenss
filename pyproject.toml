@@ -1,0 +1,21 @@
+[project]
+name = "ledgerlens"
+version = "1.0.0"
+description = "AI-powered accounts-payable invoice processing API (FastAPI + LangChain)"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 130
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "S", "UP", "ASYNC"]
+ignore = ["S101", "B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S105", "S106"]
