@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ledgerlens
+      POSTGRES_DB: ledgerlens
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ledgerlens}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ledgerlens"]
+      interval: 5s
+      retries: 10
+    # No published port: only the api container can reach the database.
+
+  api:
+    build: .
+    env_file: .env
+    depends_on:
+      db: { condition: service_healthy }
+    ports: ["8000:8000"]
+    volumes: [uploads:/data/uploads]
+    read_only: true            # immutable container filesystem...
+    tmpfs: [/tmp]              # ...except scratch space
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+
+  ollama:                      # optional local LLM: docker compose --profile ollama up
+    image: ollama/ollama:latest
+    profiles: [ollama]
+    volumes: [ollama:/root/.ollama]
+    ports: ["11434:11434"]
+
+volumes:
+  pgdata:
+  uploads:
+  ollama:
