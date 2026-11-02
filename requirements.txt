@@ -1,0 +1,16 @@
+fastapi~=0.162
+uvicorn[standard]~=0.54
+python-multipart~=0.0.32
+pydantic~=2.14
+pydantic-settings~=2.16
+email-validator~=2.3
+sqlalchemy[asyncio]~=2.1
+asyncpg~=0.32
+alembic~=1.20
+PyJWT~=2.7
+argon2-cffi~=25.1
+pypdf~=5.9
+langchain-core~=1.7
+langchain-openai~=1.7
+langchain-anthropic~=1.7
+langchain-ollama~=1.1
